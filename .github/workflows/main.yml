@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: Bigguy98/odoo-k8s
-          token: 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
+          token: ${{ secrets.ODOO-K8S-TOKEN }}
       - 
         name: Update version
         run: |
