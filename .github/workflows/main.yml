@@ -8,8 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      git_hash: $(date +%Y%m%d%H%M%S)
-      echo "$git_hash"
+      new_version: $(date +%Y%m%d%H%M%S)
     steps:
       -
         name: Checkout
@@ -32,9 +31,9 @@ jobs:
       - 
         name: Update version
         run: |
-          echo "$git_hash"
+          echo "$new_version"
           current_version=$(cat odoo.yaml | grep image: | awk '{print $2}' | cut -d':' -f2)
-          sed -i "s/$current_version/${GITHUB_REF_NAME##}-$git_hash/" odoo.yaml
+          sed -i "s/$current_version/${GITHUB_REF_NAME##}-$new_version/" odoo.yaml
           git config --global user.email "vuthanhtunghayquen98@example.com"
           git config --global user.name "Bugs Maker"
           git add .
