@@ -1,0 +1,1 @@
+python3 odoo-bin --addons-path=addons -r ${DB_USERNAME} -w ${DB_PASSWORD} --db_host ${DB_HOST} -d ${DB_NAME}
