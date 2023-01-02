@@ -30,6 +30,8 @@ jobs:
         with:
           repository: Bigguy98/odoo-k8s
       - 
+        uses: actions/checkout@v3
+      - 
         name: Update version
         run: |
           current_version=$(cat odoo.yaml | grep image: | awk '{print $2}' | cut -d':' -f2)
