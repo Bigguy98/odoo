@@ -28,4 +28,19 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/odoo-ci:latest
-
+      - 
+        name: Checkout to gitOps repo
+        uses: actions/checkout@v3
+        with:
+          repository: Bigguy98/odoo-k8s
+      - 
+        name: Update version
+        run: |
+          git_hash=$(git rev-parse --short HEAD)
+          current_version=$(cat odoo.yaml | grep image: | awk '{print $2}' | cut -d':' -f2)
+          sed -i "s/$current_version/${GITHUB_REF_NAME##}-$git_hash" odoo.yaml
+          git add .
+          git commit -m "update odoo app version to "$git_hash
+          git push
+          
+        
