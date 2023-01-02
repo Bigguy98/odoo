@@ -32,7 +32,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/odoo-ci:${{ new_version }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/odoo-ci:${{ env.new_version }}
       - 
         name: Checkout to gitOps repo
         uses: actions/checkout@v3
