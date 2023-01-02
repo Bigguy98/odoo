@@ -25,6 +25,14 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/odoo-ci:$new_version
       - 
         name: Checkout to gitOps repo
         uses: actions/checkout@v3
@@ -36,7 +44,7 @@ jobs:
         run: |
           echo "$new_version"
           current_version=$(cat odoo.yaml | grep image: | awk '{print $2}' | cut -d':' -f2)
-          sed -i "s/$current_version/${GITHUB_REF_NAME##}-$new_version/" odoo.yaml
+          sed -i "s/$current_version/$new_version/" odoo.yaml
           git config --global user.email "vuthanhtunghayquen98@example.com"
           git config --global user.name "Bugs Maker"
           git add .
