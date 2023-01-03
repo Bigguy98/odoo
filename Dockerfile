@@ -8,7 +8,7 @@ RUN apt update \
     && apt install git nodejs npm python3-pip postgresql-client  -y
     
 # clone project
-RUN git clone https://github.com/odoo/odoo.git -b $GIT_BRANCH \
+RUN git clone https://github.com/Bigguy98/odoo.git -b $GIT_BRANCH \
   && rm -rf odoo/.git
 
 WORKDIR odoo/
