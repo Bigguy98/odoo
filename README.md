@@ -7,7 +7,7 @@ To build image:
 
 **1. Run image locally**
 
-Prerequites: postgres already install on your host machine
+Prerequites: postgres already install on your host machine, with account (username: odoo, password: odoo) and pre existing database: mydb
 
 > docker run --env DB_USERNAME=odoo  --env DB_PASSWORD=odoo --env DB_HOST=host.docker.internal --env DB_NAME=mydb -p 8069:8069 myodoo:1.0.0
 
