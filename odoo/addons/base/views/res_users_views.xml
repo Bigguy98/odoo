@@ -523,7 +523,7 @@
             </field>
         </record>
         <record id="action_res_users_my" model="ir.actions.act_window">
-            <field name="name">Change My Preferences</field>
+            <field name="name">Update My Preferences - Demo CI</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.users</field>
             <field name="target">new</field>
