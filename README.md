@@ -1,5 +1,28 @@
 
-## I. How to run
+## I. Introduce
+
+Open source ERP (Enterprise resource planning) and CRM (Customer relationship management) solution, origin at: https://www.odoo.com/
+
+Here're some basic views of this solution:
+
+1. Login page
+
+![image](https://user-images.githubusercontent.com/27953500/210332367-67535f02-1975-4586-b6c3-ab3dba14bc71.png)
+
+You can login with: admin/admin
+
+2. Main dashboard
+
+![image](https://user-images.githubusercontent.com/27953500/210332475-e6c41747-1ce3-4115-97e2-0b6790d61fc8.png)
+
+3. Profile management
+
+![image](https://user-images.githubusercontent.com/27953500/210332527-47308481-42d3-4190-838e-7f9897622801.png)
+
+
+
+
+## II. How to run
 
 To build image:
 
@@ -53,7 +76,7 @@ Run with command
 
 > docker-compose up -d
 
-## II. Config CI/CD with Git Action
+## III. Config CI/CD with Git Action
 
 We do the following steps on CI/CD pipeline:
 
