@@ -43,7 +43,7 @@ jobs:
         name: Update version
         run: |
           echo "$new_version"
-          current_version=$(cat odoo.yaml | grep image: | awk '{print $2}' | cut -d':' -f2)
+          current_version=$(cat odoo.yaml | grep image: | awk '{print $3}' | cut -d':' -f2)
           sed -i "s/$current_version/$new_version/" odoo.yaml
           git config --global user.email "vuthanhtunghayquen98@example.com"
           git config --global user.name "Bugs Maker"
