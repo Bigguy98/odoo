@@ -523,7 +523,7 @@
             </field>
         </record>
         <record id="action_res_users_my" model="ir.actions.act_window">
-            <field name="name">Update My Preferences - adasqeq test ci cd with github</field>
+            <field name="name">adasqeq test ci cd with github</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">res.users</field>
             <field name="target">new</field>
